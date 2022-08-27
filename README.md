@@ -1,6 +1,6 @@
 # dataStructures
 
-###Nodes
+### Nodes
 
 Nodes can be viewed as the base class data structures are built on which varies for each individual data structure. 
 
