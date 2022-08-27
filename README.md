@@ -36,7 +36,7 @@ The best place to view the code for a linked list is [here](https://github.com/c
 
 ### Doubly Linked List
 
-Doubly linked list is the same as linked list except it contains two pointers one to the next node and one to the previous node. 
+Doubly linked list is the same as linked list except it contains two pointers one to the next node and one to the previous node and it can be viewed [here](https://github.com/coxner/dataStructures/blob/master/doublyLinkedList.py). 
 
 **__init__** in the node class initalizes the class with three attributes the value, next_node and prev_node. Only thing thats different from the the linked list data structure is the prev_node attribute.
 
@@ -53,5 +53,7 @@ Now looking at the DoublyLinkedList class...
 **remove_head()** method is a bit different then removing the node from a linked list because we must re assign the value of the prev_node attribute to be none on the node we want to become the head node. Starting lines of method assign the current head node to a variable and checks to make sure there is a head node in the list. Next line sets the head node to the node following the node we want to remove. If statement runs as long as the head nodes new value is not equal to none. If its not it sets the prev node value equal to None because we are removing the head node and there is no link there anymore. If the tail node is also equal to the value we are removing we call the remove tail method as well. 
 
 **remove_tail()** very similar to the **remove_head()** syntax follows the same logic if statement at the end except last if statement calls the remove_head() method if the tail we are removing is also the head_node. 
+
+**remove_by_value** more complex method but when broken down code is clear to understand. First two lines assign two variables. While loop runs similar to loops we saw before as long as the current_node is not equal to None. If the current nodes value is the node we want to remove we break from the loop because we have found what we are looking for. current_node is reassigned each time the while loop runs to make sure the valuewe are looking for is found. After the value is found through the while loop a few if statements are executed to keep list structure in tact. First if that runs is to check if the noe_to_remove is equal to None if it is we return None. The two following if statements check if the node to remove is the head or the tail if it is we call those respective methods. The else is called if the node we wish to remove is somewhere within the list. If this is the case we find the node we wish to removes next node and prev node. If this is the case we set the node after the node we wish to removes previous node to the node befpre the node we wish to remove. We also so the prev nodes next node to the node after the node we are removing to ensure the structure of the list stays in tact.  
 
 
