@@ -54,6 +54,32 @@ Now looking at the DoublyLinkedList class...
 
 **remove_tail()** very similar to the **remove_head()** syntax follows the same logic if statement at the end except last if statement calls the remove_head() method if the tail we are removing is also the head_node. 
 
-**remove_by_value** more complex method but when broken down code is clear to understand. First two lines assign two variables. While loop runs similar to loops we saw before as long as the current_node is not equal to None. If the current nodes value is the node we want to remove we break from the loop because we have found what we are looking for. current_node is reassigned each time the while loop runs to make sure the valuewe are looking for is found. After the value is found through the while loop a few if statements are executed to keep list structure in tact. First if that runs is to check if the noe_to_remove is equal to None if it is we return None. The two following if statements check if the node to remove is the head or the tail if it is we call those respective methods. The else is called if the node we wish to remove is somewhere within the list. If this is the case we find the node we wish to removes next node and prev node. If this is the case we set the node after the node we wish to removes previous node to the node befpre the node we wish to remove. We also so the prev nodes next node to the node after the node we are removing to ensure the structure of the list stays in tact.  
+**remove_by_value()** more complex method but when broken down code is clear to understand. First two lines assign two variables. While loop runs similar to loops we saw before as long as the current_node is not equal to None. If the current nodes value is the node we want to remove we break from the loop because we have found what we are looking for. current_node is reassigned each time the while loop runs to make sure the valuewe are looking for is found. After the value is found through the while loop a few if statements are executed to keep list structure in tact. First if that runs is to check if the noe_to_remove is equal to None if it is we return None. The two following if statements check if the node to remove is the head or the tail if it is we call those respective methods. The else is called if the node we wish to remove is somewhere within the list. If this is the case we find the node we wish to removes next node and prev node. If this is the case we set the node after the node we wish to removes previous node to the node befpre the node we wish to remove. We also so the prev nodes next node to the node after the node we are removing to ensure the structure of the list stays in tact.
+
+### Queues 
+
+Queues are an ordered data structure that follow the model of First in first out. Think concept that the first person to enter a line is the first one to get served. In a queue only the front and back nodes can be accessed. 
+
+The underlying data structure of a queue is a linked list. 
+
+**__init__** initalizes a queue the two values that are different are max_size of the queue which as it states is the max size of nodes queue can hold. The next variable is size which by default we assign to 0 this is the current size of the queue.
+
+We will review all of the queue methods.
+
+**get_size()** is a simple method which returns the size of the queue.
+
+**is_empty()** will return true if size of queue is equal to 0. We will see this method used in other functions in the future is a important function to check if the queue is empty or not.
+
+**has_space()** checks if there is space in the queue to add nodes to. First if statement checks to see if there is a max_size set if theres not it returns true and there will always be space in the queue. Else it checks if the max size is greater then the size of the queue. If it is it returns true and we could add elements to the queue if not it returns false and there is no space left in the queue.
+
+**peek()** is a simple method used to get the value of the head node in the queue.
+
+**enqueue** adds data to the back of the queue. First if statement checks to make sure there is space in the queue for data to be added. If there is we create a new node to add to the queue. Next if statement checks if the queue is empty if it is we assign the node we are adding as the head and the tail node. If it is not the first element to add we set the current tails next node to the node we are adding. After that we set the tail as the node we are adding and then increase the size of the queue by one.
+
+**dequeue** does the opposite of enqueue and removes a node from the queue. Remeber we can only remove elements from the head of the queue. We first call get_size() in the if statement to make sure there is a node there to remove. We set the node we want to remove to the head node. After that the if statement checks to see if there is only one linked list in the queue. If there is only one element in the queue and we remove it we must set the values of head and tail to none because the queue will then be empty. If there is more then one element he assign the head node to the next node in the queue. We then make sure to decrease the size of the queue by 1.
+
+
+
+
 
 
