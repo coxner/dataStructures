@@ -58,7 +58,7 @@ Now looking at the DoublyLinkedList class...
 
 ### Queues 
 
-Queues are an ordered data structure that follow the model of First in first out. Think concept that the first person to enter a line is the first one to get served. In a queue only the front and back nodes can be accessed. 
+Queues are an ordered data structure that follow the model of First in first out. Think concept that the first person to enter a line is the first one to get served. In a queue only the front and back nodes can be accessed. Code can be viewed [here](https://github.com/coxner/dataStructures/blob/master/Queue%20Shell/queue.py)
 
 The underlying data structure of a queue is a linked list. 
 
@@ -74,9 +74,25 @@ We will review all of the queue methods.
 
 **peek()** is a simple method used to get the value of the head node in the queue.
 
-**enqueue** adds data to the back of the queue. First if statement checks to make sure there is space in the queue for data to be added. If there is we create a new node to add to the queue. Next if statement checks if the queue is empty if it is we assign the node we are adding as the head and the tail node. If it is not the first element to add we set the current tails next node to the node we are adding. After that we set the tail as the node we are adding and then increase the size of the queue by one.
+**enqueue()** adds data to the back of the queue. First if statement checks to make sure there is space in the queue for data to be added. If there is we create a new node to add to the queue. Next if statement checks if the queue is empty if it is we assign the node we are adding as the head and the tail node. If it is not the first element to add we set the current tails next node to the node we are adding. After that we set the tail as the node we are adding and then increase the size of the queue by one.
 
-**dequeue** does the opposite of enqueue and removes a node from the queue. Remeber we can only remove elements from the head of the queue. We first call get_size() in the if statement to make sure there is a node there to remove. We set the node we want to remove to the head node. After that the if statement checks to see if there is only one linked list in the queue. If there is only one element in the queue and we remove it we must set the values of head and tail to none because the queue will then be empty. If there is more then one element he assign the head node to the next node in the queue. We then make sure to decrease the size of the queue by 1.
+**dequeue()** does the opposite of enqueue and removes a node from the queue. Remeber we can only remove elements from the head of the queue. We first call get_size() in the if statement to make sure there is a node there to remove. We set the node we want to remove to the head node. After that the if statement checks to see if there is only one linked list in the queue. If there is only one element in the queue and we remove it we must set the values of head and tail to none because the queue will then be empty. If there is more then one element he assign the head node to the next node in the queue. We then make sure to decrease the size of the queue by 1.
+
+### Stacks
+
+Stacks are a last in first out data structure. Data can only be added and removed from the top of the stack. Implemented using a linked list. First element added gets pushed to the bottom of the stack. Code can be viewed [here](https://github.com/coxner/dataStructures/blob/master/stacks.py)
+
+**__init__** initalizes the stack class sets the size of the stack equal to 0. Sets the top_item of the stack equal to None. Sets the limit of linked list elements the stack can hold equal to limit.
+
+**is_empty() has_space() and peek()** all this methods follow the same logic as methods from the queue class understanding of methods can be derived from there.
+
+**push()** adds a item to the top of the stack. Runs an if statement to make sure there is room to add an element. Method first creates a new node and then sets the next node equal to what is now the top_item in the stack. We then assign the top_item of the stack to the node we just created and increase the size of the stack by one.
+
+**pop()** does the opposite of push and removes the top_item from the stack. First checks to make sure the stack is not empty and there is something to remove. We assign a variable to the top_item and then reassign the top_item to the next node. After that we decreases the size of the stack by one since we are removing an item. 
+
+
+
+
 
 
 
