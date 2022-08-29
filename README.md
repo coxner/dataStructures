@@ -90,6 +90,9 @@ Stacks are a last in first out data structure. Data can only be added and remove
 
 **pop()** does the opposite of push and removes the top_item from the stack. First checks to make sure the stack is not empty and there is something to remove. We assign a variable to the top_item and then reassign the top_item to the next node. After that we decreases the size of the stack by one since we are removing an item. 
 
+### Hash Maps
+
+Is a key value data structure that uses an array and a hashing function to store and retrieve data. 
 
 
 
