@@ -1,5 +1,21 @@
 # dataStructures
 
+## Jump Around
+- [Data Structures](#Data-Structures)
+  - [Nodes](#Nodes)
+  - [Linked List](#Linked-list)
+  - [Doubly Linked List](#Doubly-linked-list)
+  - [Queues](#Queues)
+  - [Stacks](#Stacks)
+  - [Hash Maps](#hash-maps)
+- [Files](#Files)
+  
+
+
+
+
+## Data Structures
+
 ### Nodes
 
 Nodes can be viewed as the base class data structures are built on which varies for each individual data structure. 
@@ -96,7 +112,7 @@ Is a key value data structure that uses an array and a hashing function to store
 
 
 
-
+## Files
 
 
 
