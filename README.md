@@ -36,7 +36,7 @@ Can view a basic node working class [here](https://github.com/coxner/dataStructu
 
 ### Linked List
 
-One of the most basic data structures they are a list comprised of nodes. They contain dzta and a pointer to the next node. Head node is first node in data structure and last node is refered to as the tail node. 
+One of the most basic data structures they are a list comprised of nodes. They contain dzta and a pointer to the next node. Head node is first node in data structure and last node is refered to as the tail node. List is terminated when it comes across a node with a next value of null. 
 
 The best place to view the code for a linked list is [here](https://github.com/coxner/dataStructures/blob/master/linkedlist.py)
 
@@ -64,7 +64,7 @@ Now looking at the DoublyLinkedList class...
 
 **add_to_head()** is a little different then adding to a linked list because we need to set the current heads prev node to the value we are inserting. Method starts by creating a new node to be the head node and setting the current_head variable to the head node of the list. First if statement checks to make sure there is a head node in the list. If there is we set the current heads prev node to the new node we are adding and set the node we are addings next node to what used to be the head node. Following line assigns the the head node of the list to the node we just created. If statement checks incase item we are adding is the first item in the list if it is, it becomes both the head and tail node for the list.
 
-**add_to_tail()** very similar to the previous method. Follows the exact same logic except it assigns nodes as prev node and not next node. Last if statement checks incase the node we are adding to the tail is the only item in the list. If it is it also becomes the head node. 
+**add_to_tail()** very similar to the previous method. Follows the exact same logic except it assigns nodes as prev node and not next node. Last if statement checks incase the node we are adding to the tail is the only item in the list. If it is it also becomes the head node.  Since doublylinked list have a tail property we don't have to loop through the list to find the last node.
 
 **remove_head()** method is a bit different then removing the node from a linked list because we must re assign the value of the prev_node attribute to be none on the node we want to become the head node. Starting lines of method assign the current head node to a variable and checks to make sure there is a head node in the list. Next line sets the head node to the node following the node we want to remove. If statement runs as long as the head nodes new value is not equal to none. If its not it sets the prev node value equal to None because we are removing the head node and there is no link there anymore. If the tail node is also equal to the value we are removing we call the remove tail method as well. 
 
@@ -110,6 +110,99 @@ Stacks are a last in first out data structure. Data can only be added and remove
 
 Is a key value data structure that uses an array and a hashing function to store and retrieve data. 
 
+
+## Trees
+
+Structure of a tree can be viewed here. Node based data structure where each node can have links to multiple nodes. Follow a complexity of 0(log N)
+
+![tree-structure](https://github.com/coxner/algorithms/blob/master/img/trees.png)
+
+A simple project built using the tree data structure can be viewed [here](https://github.com/coxner/algorithms/blob/master/treeNodeProject.py)
+
+
+
+
+!!!! REVIST !!!
+One of the more common trees are binary trees which follow the following rules.
+  - Each node has zero, one or two children
+  - If a node has two children it must have one child that is less then the parent and one child that is greater then the parent.
+ 
+ Algorithm for a tree works in the following way.
+  - Check the root node
+  - If value is found exit 
+  - If value is less the the root node search the left subtree
+  - If the value is greater search the right subtree 
+ 
+ 
+ 
+## Heaps 
+
+Used to maintian a max or min value in a dataset and do so by creating a priority queue. 
+
+A max-heap can be considered a binary tree with two qualities.
+  - Root is the max value of the data set
+  - Every parent is greater then its child
+
+###### Tree Index Formula 
+
+Here is the formula for caculating the index of a max-heap tree. The index is the formula is refering to the parent index and that is used to caculate the childs index
+  - Left Index: (index * 2) + 1
+  - Right Index: (index * 2) + 2
+  - Parent Index: (index - 1) / 2
+
+![tree-index](https://github.com/coxner/algorithms/blob/master/img/max-heap.png)
+
+!! This structure can be different for every algorithm is not a set practice !!
+
+###### Heapify 
+
+Add an element to the bottom of the tree from there it starts bumping up the node until the trees structure is properly restored. 
+
+###### Heapsort
+
+Heapsort is an algorithm that sorts an array from extracting the root of a heap data structure. It is a time efficent algorithm that has a time complexity of 0(log n). 
+
+Here is how the algorithm works.
+  - Build a max heap to store data from a unsorted list
+  - Extract the root (larges heap value) and place it into a sorted array
+  - Replace the root with the last element of the list then re balance the tree
+  - Once the max-heap is empty return the sorted list
+
+Heapsort code can be viewed [here](https://github.com/coxner/algorithms/blob/master/heapsort/max_heap.py) and the implementation of it in a program can be viewed [here](https://github.com/coxner/algorithms/blob/master/heapsort/script.py)
+
+## Graphs
+
+In our code found [here](https://github.com/coxner/algorithms/blob/master/graphs/vertex.py) we can see the vertex class and [here](https://github.com/coxner/algorithms/blob/master/graphs/graph.py) we can see the graph class.
+
+###### Vertex
+  - Uses a dictionary as a list to store connected verticies and stores some data
+  - Connected vertex names are the keys and the edge weights are the values
+  - Has methods to add edges and return a list of connected verticies
+
+###### Graph
+  - Can be created as a directed graph where edges are set in one direction
+  - Stores every vertex in a dictionary 
+  - Vertex data is the key and vertex instance is the value
+  - Methods to add verticies, edges between verticies and determine if a path exist between two verticies
+
+###### Graph Search
+
+Graph search algorithms traverse a full graph data structure to find the value of a vertex. Two approaches same as when we used trees. 
+  - depth-first search: known as DFS follows each possible path to its end. Checks all the values along a path before moving to another path. No ideal for finding the fastest path but finding out if a path exist. 
+  - breadth-first search: known as BFS broadens its search from the point of origin to an ever-expanding circle of neighboring vertices. Checks values of all neighboring verticies before moving to another depth level. Very inneficent way to a path between two points but great way to identify the shortest path between two verticies. Does not use a stack data structure but a queue data structure to keep track of current vertex and unvisted vertex neighbors. Search vertex is dequed when all neighboring verticies have been visited. 
+ 
+Works by adding verticies to a list called visted to prevent us from visiting a vertex multiple times. Important for cycle graphs so you dont end up in a infinite loop. Done through using a stack data structure through recursion.
+
+Big O runtime = O(edges + verticies)
+
+###### Graph Search Traversal Order
+
+Depth first is good at organizing verticies (vertex values) with a visitation order of beginning to end. 
+
+Traversal orders
+  - Preorder: Each vertex added to the output list and then add to output list BEFORE they are added to the stack
+  - Postorder: Each vertex is added to the visited list and added to the output list AFTER it is popped off the stack
+  - Reverse Post-Order (Topological Sort): Returns an output list that is exactly the reverse order of the post list 
 
 
 ## Files
