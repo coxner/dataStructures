@@ -94,6 +94,9 @@ We will review all of the queue methods.
 
 **dequeue()** does the opposite of enqueue and removes a node from the queue. Remeber we can only remove elements from the head of the queue. We first call get_size() in the if statement to make sure there is a node there to remove. We set the node we want to remove to the head node. After that the if statement checks to see if there is only one linked list in the queue. If there is only one element in the queue and we remove it we must set the values of head and tail to none because the queue will then be empty. If there is more then one element he assign the head node to the next node in the queue. We then make sure to decrease the size of the queue by 1.
 
+** Queue Underflow ** is when we dequeue data from a empty queue.
+** Queue Overflow ** is when we try to enqueue data onto a full queue.
+
 ### Stacks
 
 Stacks are a last in first out data structure. Data can only be added and removed from the top of the stack. Implemented using a linked list. First element added gets pushed to the bottom of the stack. Code can be viewed [here](https://github.com/coxner/dataStructures/blob/master/stacks.py)
