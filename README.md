@@ -76,7 +76,7 @@ Now looking at the DoublyLinkedList class...
 
 Queues are an ordered data structure that follow the model of First in first out. Think concept that the first person to enter a line is the first one to get served. In a queue only the front and back nodes can be accessed. Code can be viewed [here](https://github.com/coxner/dataStructures/blob/master/Queue%20Shell/queue.py)
 
-The underlying data structure of a queue is a linked list. 
+The underlying data structure of a queue is a linked list. A **bounded queue** have a set size.
 
 **__init__** initalizes a queue the two values that are different are max_size of the queue which as it states is the max size of nodes queue can hold. The next variable is size which by default we assign to 0 this is the current size of the queue.
 
@@ -94,8 +94,8 @@ We will review all of the queue methods.
 
 **dequeue()** does the opposite of enqueue and removes a node from the queue. Remeber we can only remove elements from the head of the queue. We first call get_size() in the if statement to make sure there is a node there to remove. We set the node we want to remove to the head node. After that the if statement checks to see if there is only one linked list in the queue. If there is only one element in the queue and we remove it we must set the values of head and tail to none because the queue will then be empty. If there is more then one element he assign the head node to the next node in the queue. We then make sure to decrease the size of the queue by 1.
 
-** Queue Underflow ** is when we dequeue data from a empty queue.
-** Queue Overflow ** is when we try to enqueue data onto a full queue.
+**Queue Underflow** is when we dequeue data from a empty queue.
+**Queue Overflow** is when we try to enqueue data onto a full queue.
 
 ### Stacks
 
@@ -111,7 +111,17 @@ Stacks are a last in first out data structure. Data can only be added and remove
 
 ### Hash Maps
 
-Is a key value data structure that uses an array and a hashing function to store and retrieve data. 
+Is a key value data structure that uses an array and a hashing function to store and retrieve data. The word map means relating two pieces of information. Each key can only be tied to one value. Works by storing keys and values into an array through a hash function.
+
+**Hash Function** takes data as an input and returns an array index. Function needs to know the size of the array to assign a index. Hashfunction computes a value using a scoring metric and returns an index that fits in the array. 
+
+**Collisons** When two values in the hash function produce the same array index. Few strategies for solving hash collisions.
+
+###### Seperate Chaining
+How does it work? Hash function is run if the array index for the value is empty a new linked list is created and the value is the first element of the linked list. If a linked list already exist at the index append the value to the linked list. Worst case if two values produce same index then look up performance is only as fast as linked list. 
+
+###### Open Addressing 
+Stick with array as our data structure. But we continue to look for a new index to store our data if result of hash function already uses that index. Method of open addressing is probing. Probing is when we continue to search for a empty array index until one is found. 
 
 
 ## Trees
