@@ -36,7 +36,7 @@ Can view a basic node working class [here](https://github.com/coxner/dataStructu
 
 ### Linked List
 
-One of the most basic data structures they are a list comprised of nodes. They contain dzta and a pointer to the next node. Head node is first node in data structure and last node is refered to as the tail node. List is terminated when it comes across a node with a next value of null. 
+One of the most basic data structures they are a list comprised of nodes. They contain data and a pointer to the next node. Head node is first node in data structure and last node is refered to as the tail node. List is terminated when it comes across a node with a next value of null. 
 
 The best place to view the code for a linked list is [here](https://github.com/coxner/dataStructures/blob/master/linkedlist.py)
 
